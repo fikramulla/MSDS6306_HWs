@@ -1,0 +1,57 @@
+---
+title: "HW3"
+author: "Faiz Ikramulla"
+date: "December 5, 2018"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r echo=T, warning= FALSE, message= FALSE}
+library(openxlsx)
+
+#load the rvest package
+
+library(rvest)
+library(XML)
+library(xml2)
+library(swirl)
+
+#git cloning
+
+#git init                                    
+#setwd("C:/Users/Faiz/Desktop/HW3_4_5_6/HW3")
+#getwd()
+#git clone <" https://github.com/caesar0301/awesome-public-datasets"> 
+
+
+setwd("C:/Users/Faiz/Desktop/HW3_4_5_6/HW3")
+getwd()
+
+#load in the data set titanic
+
+#df <- read.table('titanic.csv', header=FALSE, sep",")
+
+df <- read.csv("titanic.csv",sep=",",header=TRUE)
+names(df)
+head(subset(df, select = 'Sex'))
+freq = table(df$Sex)
+freq
+plot(freq)
+summary(subset(df, select = 'Age'))
+summary(subset(df, select = 'Fare'))
+summary(subset(df, select = 'Survived'))
+
+
+#load in the data set sleep data
+
+df <- read.csv("sleep_data_01.csv",sep=",",header=TRUE)
+names(df)
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+---
+title: "HW3"
+author: "Faiz Ikramulla"
+date: "December 5, 2018"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r echo=T, warning= FALSE, message= FALSE}
+
+
+setwd("C:/Users/Faiz/Desktop/HW3_4_5_6/HW5")
+getwd()
+
+#load in datasets and merge
+
+df <- read.table("yob2015.txt",sep=",",header=FALSE)     
+
+colnames(df) <- c("NAME","M/F?","TIMES")
+head(df)
+save(df,file='y2016')
+
+df2 <- read.table("yob2016.txt",sep=";",header=FALSE)
+colnames(df2) <- c("NAME","M/F?","TIMES")
+head(df2)
+save(df2,file='y2015')
+cat("the next list  are all males and 5 times each")
+tail(df2, 10)
+
+final <- merge(df,df2,by="NAME", all=FALSE)
+#edit(final)
+total <- rbind(df,df2,by="NAME")
+cat("these are the top 10 post popular female names")
+top10 <- head(total,10)
+top10
+
+#total[order(total$TIMES),]
+#edit(total)
+
+write.csv(top10, file = "top10f.csv")
+
+
+
+

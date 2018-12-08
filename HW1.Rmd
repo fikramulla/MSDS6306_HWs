@@ -1,0 +1,86 @@
+---
+title: "HW1"
+author: "Faiz Ikramulla"
+date: "December 5, 2018"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r echo=T, warning= FALSE, message= FALSE}
+
+
+cat("BASIC MATH AND RNG")
+
+log(5)
+
+cat("log's default base is natural log (e)")
+
+log10(5)
+
+log(-10)
+
+cat("the log of a negative number is irrational (undefined). NaN (not a number)")
+
+sqrt(4)
+a <- rnorm(15)
+a
+mean(a)
+sd(a)
+x <- rnorm(15, mean=10, sd=2)
+x
+mean(x)
+sd(x)
+#
+#
+cat("VECTORS")
+
+w <- c(60, 72, 57, 90, 95, 72)
+
+h <- c(1.80, 1.85, 1.72, 1.90, 1.74, 1.91)
+#weights
+w
+#heights
+h
+cat("weights vs. heights")
+plot(h, w)
+
+avg=mean(w)
+cat("mean of weight")
+avg
+bmi <- (w/sqrt(h))
+cat("BMIs")
+bmi
+sub <- (w-avg)
+cat("subraction")
+sub
+sum(sub)
+#
+#
+#MY PROFILE
+df <- data.frame("program" = 1, "math"=5, "stats"= 3, "ML"=1, "DE"=4, "comms"=3, "DV" = 3)
+#barplot(df)
+faiz<- t(df)
+#faiz <- df
+colnames(faiz) <- c("SKILLZ")
+head(faiz)
+plot(faiz)
+barplot(faiz)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
